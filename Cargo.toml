@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 authors = ["nullbox contributors"]
-description = "A modern BusyBox-like utility with 250+ commands inspired by DOS, Linux, Unix"
+description = "A modern cross-platform BusyBox-like utility with 250+ commands for Windows and Unix (FreeBSD)"
 license = "MIT"
 
 [dependencies]

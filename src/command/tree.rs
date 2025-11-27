@@ -9,7 +9,7 @@ pub fn execute(args: &[String]) -> io::Result<()> {
     Ok(())
 }
 
-fn print_tree(dir: &Path, prefix: &str, is_last: bool) -> io::Result<()> {
+fn print_tree(dir: &Path, prefix: &str, _is_last: bool) -> io::Result<()> {
     if !dir.is_dir() {
         return Ok(());
     }

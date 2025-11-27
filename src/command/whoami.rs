@@ -2,9 +2,16 @@ use std::env;
 use std::io;
 
 pub fn execute(_args: &[String]) -> io::Result<()> {
-    let user = env::var("USER")
-        .or_else(|_| env::var("USERNAME"))
-        .unwrap_or_else(|_| "unknown".to_string());
-    println!("{}", user);
+    println!("{}", get_username());
     Ok(())
+}
+
+#[cfg(windows)]
+fn get_username() -> String {
+    env::var("USERNAME").unwrap_or_else(|_| "user".to_string())
+}
+
+#[cfg(unix)]
+fn get_username() -> String {
+    env::var("USER").unwrap_or_else(|_| "user".to_string())
 }
